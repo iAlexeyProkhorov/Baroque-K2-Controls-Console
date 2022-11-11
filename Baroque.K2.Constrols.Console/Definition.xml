@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ControlType>
+	<FullName>Baroque.K2.Controls.Console.ConsoleControl, Baroque.K2.Controls.Console</FullName>
+	<Category>Debug</Category>
+	<Group>Custom</Group>
+	<Name>Console</Name>
+	<ExecuteMethod>BaroqueConsole.execute</ExecuteMethod>
+	<GetPropertyMethod>BaroqueConsole.getProperty</GetPropertyMethod>
+	<SetPropertyMethod>BaroqueConsole.setProperty</SetPropertyMethod>
+	<GetValueMethod>BaroqueConsole.getValue</GetValueMethod>
+	<SetValueMethod>BaroqueConsole.setValue</SetValueMethod>
+	<Methods>
+		<Method ResultType="None">
+			<Name>clear</Name>
+			<DisplayName>Clear</DisplayName>
+			<Description>Clears all messages in the console.</Description>
+			<Parameters />
+		</Method>
+		<Method ResultType="None">
+			<Name>count</Name>
+			<DisplayName>Count</DisplayName>
+			<Descrption>The 'Count' method counts the number of times 'console.count()' is called.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>label</Name>
+					<DisplayName>Label</DisplayName>
+					<Description>Label</Description>
+					<IsRequired>false</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>error</Name>
+			<DisplayName>Error</DisplayName>
+			<Descrption>The error() method writes an error message to the console.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>message</Name>
+					<DisplayName>Message</DisplayName>
+					<Description>Required. The error message to write to the console.</Description>
+					<IsRequired>true</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>group</Name>
+			<DisplayName>Group</DisplayName>
+			<Descrption>The group() method starts a message group. All new messages will be written inside this group.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>label</Name>
+					<DisplayName>Label</DisplayName>
+					<Description>Optional. A label for the group.</Description>
+					<IsRequired>false</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>groupCollapsed</Name>
+			<DisplayName>GroupCollapsed</DisplayName>
+			<Descrption>The GroupCollapsed() method starts a collapsed message group. In the Console, click the expand button to open the new message group. All new messages will now be written inside this group.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>label</Name>
+					<DisplayName>Label</DisplayName>
+					<Description>Optional.A label for the group.</Description>
+					<IsRequired>false</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>groupEnd</Name>
+			<DisplayName>GroupEnd</DisplayName>
+			<Descrption>The GroupEnd() ends a message group.</Descrption>
+			<Parameters />
+		</Method>
+		<Method ResultType="None">
+			<Name>info</Name>
+			<DisplayName>Info</DisplayName>
+			<Descrption>The Info() method writes a message to the console.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>message</Name>
+					<DisplayName>Message</DisplayName>
+					<Description>Required. The message to write to the console.</Description>
+					<IsRequired>true</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>log</Name>
+			<DisplayName>Log</DisplayName>
+			<Descrption>The Log() method writes (logs) a message to the console.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>message</Name>
+					<DisplayName>Message</DisplayName>
+					<Description>Log message content</Description>
+					<IsRequired>true</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>time</Name>
+			<DisplayName>Time</DisplayName>
+			<Descrption>The Time() method starts a timer in the console view.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>label</Name>
+					<DisplayName>Label</DisplayName>
+					<Description>Optional. A label to give the timer a name.</Description>
+					<IsRequired>false</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>timeEnd</Name>
+			<DisplayName>TimeEnd</DisplayName>
+			<Descrption>The TimeEnd() method ends a timer, and writes the result to the console.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>label</Name>
+					<DisplayName>Label</DisplayName>
+					<Description>Optional. The name of the timer.</Description>
+					<IsRequired>false</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>trace</Name>
+			<DisplayName>Trace</DisplayName>
+			<Descrption>The Trace() method displays a trace that show how the code ended up at a certain point.</Descrption>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>label</Name>
+					<DisplayName>Label</DisplayName>
+					<Description>Optional. A label to give the timer a name.</Description>
+					<IsRequired>false</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+		<Method ResultType="None">
+			<Name>warn</Name>
+			<DisplayName>Warning</DisplayName>
+			<Description>The Warning() method writes a warning to the console.</Description>
+			<Parameters>
+				<Parameter Type="Text">
+					<Name>message</Name>
+					<DisplayName>Message</DisplayName>
+					<Description>Required. The message (warning) to write to the console.</Description>
+					<IsRequired>true</IsRequired>
+				</Parameter>
+			</Parameters>
+		</Method>
+	</Methods>
+	<Events>
+		<Event>OnMessageLogged</Event>
+		<Event>OnGroupingStarted</Event>
+		<Event>OnGroupingEnded</Event>
+		<Event>OnTimerStart</Event>
+		<Event>OnTimerEnd</Event>
+	</Events>
+	<DefaultEventName>OnMessageLogged</DefaultEventName>
+	<Properties>
+		<Prop ID="ControlName" friendlyname="Name" ValidationPattern="\S" ValidationMessage="Message." DesignerValidate="SourceCode.Forms.Designers.validateControlName" refreshdisplay="true" inputlength="255" type="string" category="Detail" />
+		<Prop ID="DisplayLogTime" friendlyname="Display log time" type="bool" category="General" />
+	</Properties>
+</ControlType>
