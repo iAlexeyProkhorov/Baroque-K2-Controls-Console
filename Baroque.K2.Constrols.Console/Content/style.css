@@ -1,4 +1,25 @@
-﻿a.ui-draggable-dragging.console-control,draggable.toolboxitem.console-control {
+﻿/* Rules Designer: Action configuration target mappings screens where the control has been dropped (2) */
+.token-input .entity.icon.console-control .entity-text,
+/* Rules Designer: Navigate to Form action in the URL preview (3) */
+#FormNavigatePreviewPanel .token.console-control,
+/* View/Form Designer: Droppable control's list on the right and the change control popup list(4) */
+.toolboxitem.console-control,
+/* Runtime: List View filter mappings popup target dropped control (5) */
+.theme-entry .drop-item.console-control,
+/* Runtime: List View filter mappings popup context tree (6) */
+.theme-entry .tree li.console-control > a,
+.theme-entry .tree li.console-control.children.open > a,
+.theme-entry .tree li.console-control.children.closed > a,
+.theme-entry .tree li.console-control > span,
+/* Rule Designer: Action hot spot context menu (7) */
+.menu a.menu-item.control-iconcontrol span.menu-item-icon,
+/* Rule Designer: Action configuration target mappings tree (8) */
+.input-control.icon-control.console-control .input-control-icon,
+/* Rule Designer: Transfer data action configuration target mappings screen dropped item (9) */
+.drop-item.console-control,
+/* View Designer: While dragging and dropping control on to the canvas (10) */
+.menu a.menu-item.console-control span.menu-item-icon,
+a.ui-draggable-dragging.console-control {
     background-image: url('<%= WebResource("Baroque.K2.Controls.Console.Content.Images.console-16.png")%>');
 }
 

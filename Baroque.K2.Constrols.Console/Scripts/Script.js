@@ -3,22 +3,22 @@
 
     BaroqueConsole = {
         getControlId: function (objInfo) {
-            return '#' + objInfo.CurrentControlId;
+            var value = '#' + objInfo.CurrentControlId;
+
+            return value;
         },
         getInstance: function (objInfo) {
-            return $(getControlId(objInfo));
+            return $(BaroqueConsole.getControlId(objInfo));
         },
         getOptions: function (objInfo) {
-            var controlId = getControlId(objInfo);
+            var controlId = BaroqueConsole.getControlId(objInfo);
             var options = $(controlId).data("options");
             //console.log(controlId + " options:" + JSON.stringify(options));
             return options;
         },
         execute: function (objInfo) {
-            console.log('execute: ' + JSON.stringify(objInfo));
-
             var methodName = objInfo.methodName;
-            var control = getInstance(objInfo);
+            var control = BaroqueConsole.getInstance(objInfo);
 
             switch (methodName) {
                 case 'clear':
@@ -111,7 +111,8 @@
             BaroqueConsole.values[id] = objInfo.Value;
         },
         getParameter: function (objInfo, name) {
-            return objInfo.methodParameters[name];
+            var value = objInfo.methodParameters[name];
+            return value;
         },
         values:[]
     }
