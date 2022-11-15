@@ -7,8 +7,8 @@
     <ProjectGuid>{8643717C-B1CE-421D-8016-2FD085173A34}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Baroque.K2.Constrols.Console</RootNamespace>
-    <AssemblyName>Baroque.K2.Constrols.Console</AssemblyName>
+    <RootNamespace>Baroque.K2.Controls.Console</RootNamespace>
+    <AssemblyName>Baroque.K2.Controls.Console</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="SourceCode.Forms.Controls.Web.Shared">
       <HintPath>C:\Program Files\K2\K2 smartforms Runtime\bin\SourceCode.Forms.Controls.Web.Shared.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -68,7 +69,10 @@
     <EmbeddedResource Include="Content\Images\console-64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\style.css" />
+    <EmbeddedResource Include="Content\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="register.bat" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

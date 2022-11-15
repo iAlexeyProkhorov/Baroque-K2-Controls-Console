@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ControlType>
 	<FullName>Baroque.K2.Controls.Console.ConsoleControl, Baroque.K2.Controls.Console</FullName>
-	<Category>Debug</Category>
+	<Category>Display</Category>
 	<Group>Custom</Group>
 	<Name>Console</Name>
 	<ExecuteMethod>BaroqueConsole.execute</ExecuteMethod>

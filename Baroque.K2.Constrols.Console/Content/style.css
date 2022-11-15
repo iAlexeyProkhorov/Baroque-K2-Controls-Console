@@ -1,13 +1,13 @@
-﻿a.ui-draggable-dragging.console-control {
-    background-image: url('<%= WebResource("Baroque.K2.Controls.Console.Content.images.console-16.png")%>');
+﻿a.ui-draggable-dragging.console-control,draggable.toolboxitem.console-control {
+    background-image: url('<%= WebResource("Baroque.K2.Controls.Console.Content.Images.console-16.png")%>');
 }
 
 .icon.icon-size32.console-control {
-    background-image: url('<%= WebResource("Baroque.K2.Controls.Console.Content.images.console-32.png")%>');
+    background-image: url('<%= WebResource("Baroque.K2.Controls.Console.Content.Images.console-32.png")%>');
 }
 
 .SFC.Baroque-K2-Controls-Console-ConsoleControl {
-    background-image: url('<%= WebResource("Baroque.K2.Controls.Console.Content.images.console-64.png")%>');
+    background-image: url('<%= WebResource("Baroque.K2.Controls.Console.Content.Images.console-64.png")%>');
     width: 64px;
     height: 64px;
 }

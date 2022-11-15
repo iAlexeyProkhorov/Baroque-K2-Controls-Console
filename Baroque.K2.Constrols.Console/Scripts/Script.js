@@ -15,7 +15,7 @@
             return options;
         },
         execute: function (objInfo) {
-            console.log(JSON.stringify(objInfo));
+            console.log('execute: ' + JSON.stringify(objInfo));
 
             var methodName = objInfo.methodName;
             var control = getInstance(objInfo);
@@ -111,7 +111,7 @@
             BaroqueConsole.values[id] = objInfo.Value;
         },
         getParameter: function (objInfo, name) {
-            return objInfo.parameters[name];
+            return objInfo.methodParameters[name];
         },
         values:[]
     }

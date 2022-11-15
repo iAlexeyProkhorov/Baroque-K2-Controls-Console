@@ -4,16 +4,16 @@ using System;
 using System.Web;
 using System.Web.UI;
 
-[assembly: WebResource("Baroque.K2.Controls.Console.Scripts.script.js", "text/javascript", PerformSubstitution = true)]
-[assembly: WebResource("Baroque.K2.Controls.Console.Content.styles.css", "text/css", PerformSubstitution = true)]
-[assembly: WebResource("Baroque.K2.Controls.Console.Content.images.console-16.png", "image/png")]
-[assembly: WebResource("Baroque.K2.Controls.Console.Content.images.console-32.png", "image/png")]
-[assembly: WebResource("Baroque.K2.Controls.Console.Content.images.console-64.png", "image/png")]
-namespace Baroque.K2.Constrols.Console
+[assembly: WebResource("Baroque.K2.Controls.Console.Scripts.Script.js", "text/javascript", PerformSubstitution = true)]
+[assembly: WebResource("Baroque.K2.Controls.Console.Content.style.css", "text/css", PerformSubstitution = true)]
+[assembly: WebResource("Baroque.K2.Controls.Console.Content.Images.console-16.png", "image/png")]
+[assembly: WebResource("Baroque.K2.Controls.Console.Content.Images.console-32.png", "image/png")]
+[assembly: WebResource("Baroque.K2.Controls.Console.Content.Images.console-64.png", "image/png")]
+namespace Baroque.K2.Controls.Console
 {
     [ControlTypeDefinition("Baroque.K2.Controls.Console.Definition.xml")]
-    [ClientScript("Baroque.K2.Controls.Console.Scripts.script.js")]
-    [ClientCss("Baroque.K2.Controls.Console.Content.styles.css")]
+    [ClientScript("Baroque.K2.Controls.Console.Scripts.Script.js")]
+    [ClientCss("Baroque.K2.Controls.Console.Content.style.css")]
     public class ConsoleControl : BaseControl
     {
         #region Constructor
