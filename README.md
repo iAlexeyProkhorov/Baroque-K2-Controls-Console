@@ -1,6 +1,6 @@
 # K2 Java Script Console
 Hi👋!
-Today I want to represent you my first public K2 custom control. It's allows you to use standard browser's console for you K2 applications debugging.
+Today I want to represent you my first public K2 custom control. It's allows you to use standard browser's console for your K2 applications debugging.
 
 # Foreword
 Once I've an expirience with Nintex K2 BPM platform and need to debug some smartforms. After few days I understand one thing: "I really hate popup message boxes for debugging".
