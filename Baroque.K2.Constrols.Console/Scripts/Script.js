@@ -124,7 +124,7 @@
         $(document).delegate('.SFC.Baroque-K2-Controls-Console-ConsoleControl', 'OnGroupingStarted.SFC.Baroque-K2-Controls-Console-ConsoleControl', function (e) {
             raiseEvent(this.id, 'Control', 'OnGroupingStarted');
         });
-        $(document).delegate('.SFC.Baroque-K2-Controls-Console-ConsoleControl', 'OnGroupingFinished.SFC.Baroque-K2-Controls-Console-ConsoleControl', function (e) {
+        $(document).delegate('.SFC.Baroque-K2-Controls-Console-ConsoleControl', 'OnGroupingEnded.SFC.Baroque-K2-Controls-Console-ConsoleControl', function (e) {
             raiseEvent(this.id, 'Control', 'OnGroupingEnded');
         });
         $(document).delegate('.SFC.Baroque-K2-Controls-Console-ConsoleControl', 'OnTimerStart.SFC.Baroque-K2-Controls-Console-ConsoleControl', function (e) {
