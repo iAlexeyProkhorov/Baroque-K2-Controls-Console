@@ -27,3 +27,18 @@ almost all standard console methods except: **assert** and **table**. I will try
 * [Trace](https://www.w3schools.com/jsref/met_console_trace.asp);
 * [Warn](https://www.w3schools.com/jsref/met_console_warn.asp);
 
+# How to use?
+First of all you need to install this control on K2 server, where you want to use it. 
+## Installation:
+* Open command prompt via admin rights;
+* Put a text command:
+`"{Your K2 folder path}\K2\Bin\controlutil.exe" register -assembly:"{Your K2 folder path}K2\K2 SmartForms Designer\Bin\Baroque.K2.Controls.Console.dll"`
+* Run command. It should successfully install control on your K2 server. Write here if you had some issues with control registration;
+
+KUDOS! That's all. Now you know how to register control on K2 server.
+
+## Designer
+Now you can open your K2 designer. You will see K2 reload page firstly. If you see some errors after reloading, but control was successfully registered in console - dont panic. Just try to re-upload control one more time or try to run regisetr command again. Usually this things are helps to restart K2 server successfully.
+Sometimes I need to reload control 3 - 5 times to run server again😅;
+Create a new view or open some your view created previously. Scroll Toolbox down and you find "Custom" controls group there and "Console" control there. Just drop it on your view and use 'Execute a control method' rule to use control methods. 
+
