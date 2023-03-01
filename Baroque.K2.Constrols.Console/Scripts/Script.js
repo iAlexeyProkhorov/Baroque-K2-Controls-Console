@@ -4,7 +4,6 @@
     BaroqueConsole = {
         getControlId: function (objInfo) {
             var value = '#' + objInfo.CurrentControlId;
-
             return value;
         },
         getInstance: function (objInfo) {
@@ -13,6 +12,8 @@
         getOptions: function (objInfo) {
             var controlId = BaroqueConsole.getControlId(objInfo);
             var options = $(controlId).data("options");
+            if (options === undefined || options === null)
+                options = {};
             //console.log(controlId + " options:" + JSON.stringify(options));
             return options;
         },
@@ -52,7 +53,7 @@
                     control.trigger("OnMessageLogged");
                     break;
                 case 'log':
-                    var message = BaroqueConsole.getParameter(objInfo, "message");
+                    var message = BaroqueConsole.prepareMessage(objInfo, BaroqueConsole.getParameter(objInfo, "message"));
                     console.log(message);
                     control.trigger("OnMessageLogged");
                     break;
@@ -94,27 +95,41 @@
         },
         setProperty: function (objInfo) {
             var controlId = BaroqueConsole.getControlId(objInfo);
-            var options = BaroqueConsole.getOptions(controlId);
+            var options = BaroqueConsole.getOptions(objInfo);
             //console.log("TemporaryStrorage.setProperty:" + JSON.stringify(options));
             options[property] = value;
             $(controlId).data("options", options);
         },
         getValue: function (objInfo) {
-            console.log("getValue: " + JSON.stringify(objInfo));
-            var id = getControlId(objInfo);
-            var value = BaroqueConsole.values[id];
+            //console.log("getValue: " + JSON.stringify(objInfo));
+            var options = BaroqueConsole.getOptions(objInfo);
+            //console.log("getValue.options: " + JSON.stringify(options));
+            var value = options["Value"];
             return value;
         },
         setValue: function (objInfo) {
-            var id = getControlId(objInfo);
-            console.log("setValue: " + JSON.stringify(objInfo));
-            BaroqueConsole.values[id] = objInfo.Value;
+            var controlId = BaroqueConsole.getControlId(objInfo);
+            var options = BaroqueConsole.getOptions(objInfo);
+            //console.log("setValue: " + JSON.stringify(objInfo));
+            options["Value"] = objInfo.Value;
+            $(controlId).data("options", options);
         },
         getParameter: function (objInfo, name) {
             var value = objInfo.methodParameters[name];
             return value;
         },
-        values:[]
+        prepareMessage: function (objInfo, value) {
+            var options = BaroqueConsole.getOptions(objInfo);
+            var displayLogTimeValue = options["DisplayLogTime"];
+            if (!BaroqueConsole.isEmpty(displayLogTimeValue) && displayLogTimeValue == 'true') {
+                var now = new Date($.now());
+                value = now.getMinutes() + ":" + now.getSeconds() + ":" + now.getMilliseconds() + " || " + value;
+            }
+            return value;
+        },
+        isEmpty: function (value) {
+            return value == undefined && value == null && value == "";
+        }
     }
 
     $(document).ready(function () {

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ControlType>
 	<FullName>Baroque.K2.Controls.Console.ConsoleControl, Baroque.K2.Controls.Console</FullName>
-	<Category>Display</Category>
+	<Category>Input</Category>
 	<Group>Custom</Group>
 	<Name>Console</Name>
 	<ExecuteMethod>BaroqueConsole.execute</ExecuteMethod>
@@ -9,6 +9,11 @@
 	<SetPropertyMethod>BaroqueConsole.setProperty</SetPropertyMethod>
 	<GetValueMethod>BaroqueConsole.getValue</GetValueMethod>
 	<SetValueMethod>BaroqueConsole.setValue</SetValueMethod>
+	<DataTypes>
+		<DataType>Text</DataType>
+		<DataType>Memo</DataType>
+		<DataType>Number</DataType>
+	</DataTypes>
 	<Methods>
 		<Method ResultType="None">
 			<Name>clear</Name>
@@ -163,6 +168,7 @@
 	<DefaultEventName>OnMessageLogged</DefaultEventName>
 	<Properties>
 		<Prop ID="ControlName" friendlyname="Name" ValidationPattern="\S" ValidationMessage="Message." DesignerValidate="SourceCode.Forms.Designers.validateControlName" refreshdisplay="true" inputlength="255" type="string" category="Detail" />
+		<Prop ID="Value" setFunction="BaroqueConsole.setValue" friendlyname="Value" type="string" category="Detail" refreshdisplay="true" inputlength="255" />
 		<Prop ID="DisplayLogTime" friendlyname="Display log time" type="bool" category="General" />
 	</Properties>
 </ControlType>

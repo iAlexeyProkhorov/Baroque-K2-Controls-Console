@@ -57,7 +57,17 @@ namespace Baroque.K2.Controls.Console
 
         #region Properties
 
-        public bool DisplayLogTime { get; set; }
+        public bool DisplayLogTime
+        {
+            get { return GetOption<bool>("DisplayLogTime", false); }
+            set { SetOption<bool>("DisplayLogTime", value, false); }
+        }
+
+        public string Value
+        {
+            get { return GetOption<string>("Value", string.Empty); }
+            set { SetOption<string>("Value", value, string.Empty); }
+        }
 
         #endregion
     }
