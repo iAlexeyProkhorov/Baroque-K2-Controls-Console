@@ -120,8 +120,12 @@
         },
         prepareMessage: function (objInfo, value) {
             var options = BaroqueConsole.getOptions(objInfo);
+            if (BaroqueConsole.isEmpty(options["DisplayLogTime"])) {
+                return value;
+            }
+
             var displayLogTimeValue = options["DisplayLogTime"];
-            if (!BaroqueConsole.isEmpty(displayLogTimeValue) && displayLogTimeValue == 'true') {
+            if (displayLogTimeValue == 'true') {
                 var now = new Date($.now());
                 value = now.getMinutes() + ":" + now.getSeconds() + ":" + now.getMilliseconds() + " || " + value;
             }
